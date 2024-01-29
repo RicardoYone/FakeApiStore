@@ -1,0 +1,70 @@
+<header class="text-gray-400 bg-gray-900 body-font h-[10vh]">
+  <div
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between"
+  >
+    <div>
+      <a
+        routerLink="/"
+        ng-reflect-router-link="/"
+        href="/"
+        class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="w-10 h-10 text-white p-2 bg-green-500 rounded-full"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+          ></path>
+        </svg>
+        <span class="ml-3 text-xl">FakeApiPlatzi</span>
+      </a>
+    </div>
+    <div *ngIf="users" class="flex items-center space-x-4 mb-4 md:mb-0">
+      <img
+        [src]="users.avatar"
+        [alt]="users.id"
+        class="w-10 h-10 rounded-full"
+      />
+      <h4 class="text-lg font-semibold text-gray-200 items-center">
+        {{ users.name }}
+      </h4>
+    </div>
+    <div>
+      <nav
+        class="md:ml-auto flex flex-wrap items-center text-base justify-center mb-4 md:mb-0"
+      >
+        <!-- <a class="mr-5 hover:text-white">First Link</a>
+      <a class="mr-5 hover:text-white">Second Link</a> -->
+        <a
+          *ngIf="!users"
+          class="mr-5 hover:text-white"
+          routerLink="/login"
+          ng-reflect-router-link="/login"
+          href="/login"
+          >Iniciar Sesion</a
+        >
+        <a
+          *ngIf="users"
+          (click)="onLogout()"
+          class="mr-5 hover:text-white"
+          routerLink="/"
+          ng-reflect-router-link="/"
+          href="/"
+          >Cerrar Sesion</a
+        >
+      </nav>
+    </div>
+    <!-- <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button> -->
+  </div>
+</header>

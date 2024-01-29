@@ -1,0 +1,45 @@
+<section class="bg-gray-900 p-5">
+  <div class="container mx-auto">
+    <mat-accordion class="bg-gray-900 rounded shadow-md text-white">
+      <mat-expansion-panel
+        hideToggle
+        class="p-0 border-b border-gray-800 bg-gray-700"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title
+            class="font-semibold hover:text-gray-300"
+            (click)="filterProducts('all')"
+          >
+            TODOS LOS PRODUCTOS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="mt-4 bg-gray-900 rounded shadow-md text-white">
+      <mat-expansion-panel
+        hideToggle
+        class="p-0 border-b border-gray-800 bg-gray-700"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="font-semibold hover:text-gray-300">
+            CATEGORIAS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="p-1">
+          <h5
+            class=" font-semibold text-lg cursor-pointer hover:text-gray-300"
+            *ngFor="let e of categories"
+            (click)="filterProducts(e.name)"
+          >
+            {{ e.name }}
+          </h5>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>
