@@ -6,10 +6,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
